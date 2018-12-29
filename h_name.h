@@ -1,4 +1,7 @@
 #pragma once
+#pragma once
+#pragma once
+#pragma once
 using namespace std;
 #include <iostream>
 #include <limits>
@@ -13,6 +16,9 @@ using namespace std;
 #include<stack>
 #include<string>
 #include<cstring>
+#include<algorithm>
+#include<queue>
+#include<deque>
 bool user_says_yes()
 {
 	{

@@ -1,59 +1,132 @@
+#include"class_bt.h"
 #include"h_name.h"
-#include"Graphh.h"
-
 
 int main()
 {
-	/*Graph<string> social_network;
-	cout << "插入结点 id输入-1停止\n";
-	while (true)
+	cout << "请输入一个字符串" << endl;
+	string a;
+	cin >> a;
+	BinartTree abc(a);
+	abc.menu();
+	int ch=0;
+	while (ch!=12)
 	{
-		int id;
-		cout << "请输入id " << endl;
-		cin >> id;
-		if (id == -1) break;
-		string name;
-		cout << "请输入姓名：" << endl;
-		cin >> name;
-		social_network.insert_v(id, name);
+		cout << endl;
+		cout << "请输入指令：" << endl;
+		cin >> ch;
+		switch (ch)
+		{
+		case 1:
+		{
+			char s;
+			cin >> s;
+			abc.insert(s);
+			break;
+		}
+		case 2:
+		{
+			cout << "前序遍历输出为：" << endl;
+			abc.preorder(abc.getroot());
+			break;
+		}
+		case 3:
+		{
+			cout << "中序遍历输出为：" << endl;
+			abc.inorder(abc.getroot());
+			break;
+		}
+		case 4:
+		{
+			cout << "后序遍历输出为：" << endl;
+			abc.postorder(abc.getroot());
+			break;
+		}
+		case 5:
+		{
+			cout << "树的深度为：" << endl;
+			cout<<abc.getHeight(abc.getroot());
+			break;
+		}
+		case 6:
+		{
+			cout << "树的宽度为：" << endl;
+		    cout<<abc.getWidth();
+		    break;
+
+		}
+		case 7:
+		{
+			cout << "度为2的节点数:" << endl;
+			cout<<abc.count_2(abc.getroot());
+			break;
+		}
+		case 8:
+		{
+			cout << "度为1的节点数:" << endl;
+			cout << abc.count_1(abc.getroot());
+			break;
+		}
+		case 9:
+		{
+			cout << "度为0的节点数:" << endl;
+			cout << abc.count_0(abc.getroot());
+			break;
+		}
+		case 10:
+		{
+			cout << "请输入要删除的元素" << endl;
+			char t;
+			cin >> t;
+			abc.delete_char(t);
+			break;
+		}
+		case 11:
+		{
+			cout<< "请输入要查找的元素" << endl;
+			char p;
+			cin >> p;
+			bool flag = abc.find(abc.getroot(),p);
+			if (flag== 0)
+			{
+				cout << "查无此人！" << endl;
+			}
+			else
+			{
+				cout << "这个元素在树中" << endl;
+			}
+			break;
+		}
+		case 12:
+		{
+			cout << "byebye" << endl;
+			break;
+		}
+		case 13:
+		{
+			abc.clear(abc.getroot());
+			break;
+		}
+		case 14:
+		{
+			int em= abc.empty() ;
+			if (em == 1) cout << "空树" << endl;
+			else cout << "非空树" << endl;
+			break;
+		}
+		case 15:
+		{
+			abc.ceng_order();
+			cout << endl;
+			break;
+		}
+		default:
+			cout << "请输入正确的指令" << endl;
+			break;
+		}
+
 	}
-	cout << "关系网如下：" << endl;
-	social_network.print();
-
-	cout << "是否增加边：y是 n不是" << endl;
-	while (user_says_yes())
-	{
-		cout << "输入你想增加的边的两个结点id" << endl;
-		int n1, n2;
-		cin >> n1 >> n2;
-		social_network.insert_e(n1, n2);
-	}
-	cout << "关系网如下：" << endl;
-	social_network.print();
-
-	cout << "是否计算两个人的最短路劲：y是 n不是" << endl;
-	while (user_says_yes())
-	{
-		cout << "请输入你想找的两个人的id" << endl;
-		int n1, n2;
-		cin >> n1 >> n2;
-		social_network.path_length(n1, n2);
-	}
-	
-*/
-
-	//test
-	Graph<string> test;
-
-	test.insert_v(0,"Big Zhang");
-	test.insert_v(2, "Small Pig");
-	test.insert_v(4, "Ning Li");
-	test.insert_v(6, "Yexin Shen");
-	test.insert_v(7, "Yang Fang");
-	test.print();
-
-	test.path_length(2, 7);
-	
-	system("pause");
+-	system("pause");
 
 }
+
+
